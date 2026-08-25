@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 
+import com.learningportal.dto.EnrollmentRequest;
 import com.learningportal.entity.User;
 import com.learningportal.exception.UserNotFoundException;
 import com.learningportal.repo.UserRepo;
@@ -96,6 +97,22 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String courseEnrollment(String userId, String courseId) {
+		//Check if the user exists
+		boolean existsById = userRepo.existsById(userId);
+		if(!existsById) {
+			throw new UserNotFoundException("User not found with ID: " + userId);
+		}
+		
+		//check course exist or not by calling course service get api method
+		return null;
+	}
+
+	
+
+	
 
 	
 

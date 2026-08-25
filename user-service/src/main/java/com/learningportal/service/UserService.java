@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.learningportal.dto.EnrollmentRequest;
 import com.learningportal.entity.User;
 
 
@@ -22,5 +23,10 @@ public interface UserService {
 	  User getByEmail(String email);
 	//method for partial update
 	User partialUpdate(String id, Map<String, Object> fields);
+	
+	//course enrollment
+	String courseEnrollment(String userId, String courseId);
+	
+	
 
 }
